@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "actions/availability.ts",
+    "actions/booking-status.ts",
+    "actions/create-booking.ts",
+    "actions/create-review.ts",
+    "actions/settings.ts",
+    "app/user/pay/page.tsx",
+    "app/user/bookings/page.tsx",
+    "app/user/shoppingCard/page.tsx",
+    "app/user/page.tsx",
+    "app/host/_components/sidebar.tsx",
+    "app/host/reviews/page.tsx",
+    "app/host/bookings/page.tsx",
+    "app/host/availability/page.tsx",
+    "components/host/edit-property-form.tsx",
+    "components/user/date-form-pool.tsx",
+    "components/user/review-modal.tsx",
+    "components/user/slider.tsx",
+    "app/user/pool/page.tsx",
+    "components/user/booking-modal.tsx"
+  ],
+  "exclude": ["node_modules"]
+}
