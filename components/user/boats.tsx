@@ -1,23 +1,13 @@
-"use client";
-import { useState, useEffect } from "react";
+import Template from "./widgets/template";
 
-const data = [1, 2, 3, 4, 5, 6];
+interface IBoats {
+  choosen: number;
+  setChoosen: (choosen: number) => void;
+}
 
-const Template = ({ item, choosen, setChoosen }: any) => {
-  return (
-    <div
-      onClick={() => setChoosen(item)}
-      className={`${
-        item === choosen ? "bg-black" : "bg-white"
-      }  p-4 m-4 rounded-full shadow-md flex`}
-    >
-      <h3>Boat {item}</h3>
-    </div>
-  );
-};
+const Boats = ({ choosen, setChoosen }: IBoats) => {
+  const data = [1, 2, 3, 4, 5, 6];
 
-const Boats = () => {
-  const [choosen, setChoosen] = useState(0);
   return (
     <div className="bg-gray-200 w-screen flex flex-col items-center">
       <h2>Boats</h2>
