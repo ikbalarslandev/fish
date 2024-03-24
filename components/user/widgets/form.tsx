@@ -21,9 +21,11 @@ import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 import { Checkbox } from "@/components/ui/checkbox";
 import { record } from "@/actions/record";
+import { useRouter } from "next/navigation";
 
 export const RecordForm = () => {
   const searchParams = useSearchParams();
+  const router = useRouter();
 
   const urlError =
     searchParams.get("error") === "OAuthAccountNotLinked"
@@ -36,11 +38,11 @@ export const RecordForm = () => {
   const form = useForm<z.infer<typeof RecordSchema>>({
     resolver: zodResolver(RecordSchema),
     defaultValues: {
-      temprature: 1,
-      ph: 1,
-      food: 1,
-      antibiotics: 1,
-      deadPieces: 1,
+      temprature: 0,
+      ph: 0,
+      food: 0,
+      antibiotics: 0,
+      deadPieces: 0,
       webCheck: false,
     },
   });
@@ -61,6 +63,8 @@ export const RecordForm = () => {
     };
 
     record(newValues).catch(() => setError("Something went wrong"));
+
+    router.push("/user");
   };
 
   return (

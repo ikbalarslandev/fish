@@ -15,7 +15,7 @@ const Template = ({
     <div
       onClick={() => setChoosen(item)}
       className={`${
-        item === choosen ? "bg-black" : "bg-white"
+        item === choosen ? "bg-blue-200" : "bg-white"
       }  p-4 m-4 rounded-full shadow-md flex`}
     >
       <h3>
