@@ -1,7 +1,7 @@
 "use client";
 
-import Boats from "@/components/user/boats";
-import Pools from "@/components/user/pools";
+import Boats from "@/components/user/main/boats";
+import Pools from "@/components/user/main/pools";
 import { useState, useEffect } from "react";
 
 const HomePage = () => {

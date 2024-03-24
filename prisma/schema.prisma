@@ -69,10 +69,9 @@ model PasswordResetToken {
 
 model Record {
   id            String     @id @default(cuid()) @map("_id")
-  staffName     String
   boatId        Int
   poolId        Int
-  temperature   Float
+  temprature   Float
   ph            Float
   food          Float
   antibiotics   Float

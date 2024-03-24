@@ -1,4 +1,4 @@
-import Template from "./widgets/template";
+import Template from "../widgets/template";
 import { useRouter } from "next/navigation";
 
 const Pools = ({ choosen, setChoosen }: any) => {

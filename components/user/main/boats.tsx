@@ -1,4 +1,4 @@
-import Template from "./widgets/template";
+import Template from "../widgets/template";
 
 interface IBoats {
   choosen: number;

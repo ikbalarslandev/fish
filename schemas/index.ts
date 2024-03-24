@@ -70,214 +70,49 @@ export const RegisterSchema = z.object({
   role: z.enum([UserRole.ADMIN, UserRole.USER]),
 });
 
-export const PropertySchema = z.object({
-  title: z.string().min(1, {
-    message: "Title is required",
+export const RecordSchema = z.object({
+  temprature: z.number().min(1, {
+    message: "Tempature is required",
   }),
-  description: z.string().min(1, {
-    message: "Description is required",
-  }),
-  meta: z.string().min(1, {
-    message: "Meta description is required",
-  }),
-  hours: z.object({
-    mens: z.object({
-      weekend: z.object({
-        checkIn: z.string().min(5, {
-          message: "checkIn is required",
-        }),
-        checkOut: z.string().min(5, {
-          message: "checkOut is required",
-        }),
-      }),
-      weekday: z.object({
-        checkIn: z.string().min(5, {
-          message: "checkIn is required",
-        }),
-        checkOut: z.string().min(5, {
-          message: "checkOut is required",
-        }),
-      }),
-    }),
 
-    womens: z.object({
-      weekend: z.object({
-        checkIn: z.string().min(5, {
-          message: "checkIn is required",
-        }),
-        checkOut: z.string().min(5, {
-          message: "checkOut is required",
-        }),
-      }),
-      weekday: z.object({
-        checkIn: z.string().min(5, {
-          message: "checkIn is required",
-        }),
-        checkOut: z.string().min(5, {
-          message: "checkOut is required",
-        }),
-      }),
-    }),
+  ph: z.number().min(1, {
+    message: "ph is required",
   }),
-  location: z.string().min(1, {
-    message: "location is required",
+  food: z.number().min(1, {
+    message: "food is required",
   }),
-  address: z.string().min(1, {
-    message: "address is required",
+  antibiotics: z.number().min(1, {
+    message: "antibiotics is required",
   }),
-  reviews: z.array(
-    z.object({
-      date: z.string(),
-      rating: z.number(),
-      title: z.string(),
-      description: z.string(),
-      userName: z.string(),
-    })
-  ),
-  availability: z.array(
-    z.object({
-      date: z.string(),
-      price: z.string(),
-      free: z.number(),
-    })
-  ),
-  imgUrls: z.array(z.string()),
-  price: z.number(),
-  free: z.number(),
-  type: z.string(),
-  depth: z.number(),
-  tags: z.array(z.string()),
+  deadPieces: z.number().min(1, {
+    message: "deadPieces is required",
+  }),
+  webCheck: z.boolean(),
 });
 
-export const CreatePropertyFormProps = z.object({
-  title: z.string().min(1, {
-    message: "Title is required",
+export const RecordDataSchema = z.object({
+  poolId: z.number().min(1, {
+    message: "PoolId is required",
   }),
-  description: z.string().min(1, {
-    message: "Description is required",
-  }),
-  meta: z.string().min(1, {
-    message: "Meta description is required",
-  }),
-  mwdcheckIn: z.string().min(5, {
-    message: "checkIn is required",
-  }),
-  mwdcheckOut: z.string().min(5, {
-    message: "checkOut is required",
-  }),
-  mwecheckIn: z.string().min(5, {
-    message: "checkIn is required",
-  }),
-  mwecheckOut: z.string().min(5, {
-    message: "checkOut is required",
-  }),
-  wwdcheckIn: z.string().min(5, {
-    message: "checkIn is required",
-  }),
-  wwdcheckOut: z.string().min(5, {
-    message: "checkOut is required",
-  }),
-  wwecheckIn: z.string().min(5, {
-    message: "checkIn is required",
-  }),
-  wwecheckOut: z.string().min(5, {
-    message: "checkOut is required",
-  }),
-  location: z.string().min(1, {
-    message: "location is required",
-  }),
-  address: z.string().min(1, {
-    message: "address is required",
-  }),
-  imgUrls: z.array(z.string()),
-  price: z.number(),
-  free: z.number(),
-  type: z.string(),
-  tags: z.array(z.string()).optional(),
-  depth: z.number(),
-});
-
-export const CreatePropertyProps = z.object({
-  title: z.string().min(1, {
-    message: "Title is required",
-  }),
-  description: z.string().min(1, {
-    message: "Description is required",
-  }),
-  meta: z.string().min(1, {
-    message: "Meta description is required",
-  }),
-  hours: z.object({
-    mens: z.object({
-      weekend: z.object({
-        checkIn: z.string().min(5, {
-          message: "checkIn is required",
-        }),
-        checkOut: z.string().min(5, {
-          message: "checkOut is required",
-        }),
-      }),
-      weekday: z.object({
-        checkIn: z.string().min(5, {
-          message: "checkIn is required",
-        }),
-        checkOut: z.string().min(5, {
-          message: "checkOut is required",
-        }),
-      }),
-    }),
-
-    womens: z.object({
-      weekend: z.object({
-        checkIn: z.string().min(5, {
-          message: "checkIn is required",
-        }),
-        checkOut: z.string().min(5, {
-          message: "checkOut is required",
-        }),
-      }),
-      weekday: z.object({
-        checkIn: z.string().min(5, {
-          message: "checkIn is required",
-        }),
-        checkOut: z.string().min(5, {
-          message: "checkOut is required",
-        }),
-      }),
-    }),
+  boatId: z.number().min(1, {
+    message: "boatId is required",
   }),
 
-  location: z.string().min(1, {
-    message: "location is required",
+  temprature: z.number().min(1, {
+    message: "Tempature is required",
   }),
-  address: z.string().min(1, {
-    message: "address is required",
+
+  ph: z.number().min(1, {
+    message: "ph is required",
   }),
-  imgUrls: z.array(z.string()),
-  price: z.number(),
-  free: z.number(),
-  type: z.string(),
-  tags: z.array(z.string()).optional(),
-  depth: z.number(),
-});
-export const BookingSchema = z.object({
-  id: z.string(),
-  propertyId: z.string(),
-  userId: z.string(),
-  date: z.string(),
-  price: z.number().int(),
-  bookingTime: z.date(),
-  discountCode: z.optional(z.string()),
-});
-
-export const ReviewSchema = z.object({
-  bookingId: z.string(),
-  propertyId: z.string(),
-  rating: z.number().min(1).max(5),
-  title: z.string(),
-  description: z.string(),
-});
-
-export const DiscountSchema = z.object({
-  code: z.string(),
+  food: z.number().min(1, {
+    message: "food is required",
+  }),
+  antibiotics: z.number().min(1, {
+    message: "antibiotics is required",
+  }),
+  deadPieces: z.number().min(1, {
+    message: "deadPieces is required",
+  }),
+  webCheck: z.boolean(),
 });
