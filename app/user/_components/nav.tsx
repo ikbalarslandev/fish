@@ -4,7 +4,6 @@ import Link from "next/link";
 import { UserButton } from "@/components/auth/user-button";
 import { useCurrentRole } from "@/hooks/use-current-role";
 import { useState } from "react";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export const Nav = () => {
@@ -65,24 +64,6 @@ export const Nav = () => {
             isMenuOpen ? "flex" : "hidden"
           }`}
         >
-          <Link
-            onClick={toggleMenu}
-            href="/shoppingCard"
-            className="text-lg text-gray-700"
-          >
-            Shopping Card
-          </Link>
-
-          {role && (
-            <Link
-              onClick={toggleMenu}
-              href="/bookings "
-              className="text-lg text-gray-700"
-            >
-              Bookings
-            </Link>
-          )}
-
           <UserButton toggleMenu={toggleMenu} />
         </div>
       </div>
